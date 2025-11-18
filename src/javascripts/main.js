@@ -1,0 +1,7 @@
+import "./javascripts/menu.js"
+import "./javascripts/fade_section.js"
+import "./javascripts/typewriter.js"
+import "./javascripts/scrollToDiv.js"
+import "./javascripts/dark_mode.js"
+import "./javascripts/gif_toggle.js"
+import "./javascripts/send_email.js"
