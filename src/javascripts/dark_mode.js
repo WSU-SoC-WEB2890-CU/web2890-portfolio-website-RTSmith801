@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Update BOTH icons
     toggleButtons.forEach((btn) => {
       if (btn) {
-        btn.src = darkMode ? "./icons/moon_icon.png" : "./icons/sun_icon.png"
+        btn.src = darkMode ? "../icons/moon_icon.png" : "../icons/sun_icon.png"
       }
     })
   }
