@@ -1,3 +1,6 @@
+import sunIcon from "../icons/sun_icon.png"
+import moonIcon from "../icons/moon_icon.png"
+
 document.addEventListener("DOMContentLoaded", function () {
   const toggleButtons = [
     document.getElementById("toggleColorButton"),
@@ -44,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Update BOTH icons
     toggleButtons.forEach((btn) => {
       if (btn) {
-        btn.src = darkMode ? "../icons/moon_icon.png" : "../icons/sun_icon.png"
+        btn.src = darkMode ? moonIcon : sunIcon
       }
     })
   }
