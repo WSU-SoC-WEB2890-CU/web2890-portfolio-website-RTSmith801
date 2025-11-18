@@ -1,3 +1,825 @@
-/* Your styles go here */
-@import "bootstrap/scss/bootstrap.scss";
-@import "bootstrap-icons/font/bootstrap-icons.css";
+@use "sass:color";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../../node_modules/bootstrap-icons/font/bootstrap-icons.css";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* ==========================================================================
+   VARIABLES
+   ========================================================================== */
+
+$max-width: 1800px;
+$color01: #20bf55;
+$color02: #01baef;
+$color03: #fbfbff;
+$color04: #0a66c2;
+$color05: #1c1018;
+$color06: #333333;
+
+/* Breakpoints (used consistently below) */
+$bp-large: 1260px;
+$bp-medium: 950px;
+$bp-sm: 700px;
+$bp-xsmall: 525px;
+
+/* ==========================================================================
+   GLOBAL / BASE
+   ========================================================================== */
+
+html {
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+}
+
+body {
+  font-family: Montserrat, sans-serif;
+  background-color: $color03;
+  color: $color05;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h3 {
+  text-transform: uppercase;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* Reset for images inside nav (kept from original) */
+nav img {
+  width: 48px;
+  height: 48px;
+  display: block;
+}
+
+/* Generic helpers */
+.clickable {
+  transition: transform 0.5s ease;
+  &:hover {
+    transform: translateY(-10%);
+    cursor: pointer;
+  }
+}
+
+/* Button base (kept identical in behavior) */
+.btn {
+  border-color: $color04;
+  border-style: solid;
+  border-width: 2px;
+  color: $color04;
+  width: 200px;
+  text-align: center;
+  transition: color 0.1s ease, background-color 0.2s ease;
+  &:last-of-type {
+    border-width: 2px;
+  }
+  &:hover {
+    background-color: $color04;
+    color: $color03;
+    cursor: pointer;
+  }
+}
+
+/* GIF hover cursor */
+.toggle-gif {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+/* Layout wrapper defaults */
+header,
+main,
+footer {
+  margin: 0 auto;
+  max-width: $max-width;
+}
+
+/* ==========================================================================
+   HEADER & NAV — FULL REWRITE (A1)
+   - Desktop: left desktop nav occupies space over hero (invisible but keeps width)
+   - Desktop: right icons remain fixed/right
+   - Mobile: hamburger shown, toggles #mobileMenu, which includes icons
+   - Uses .invisible-nav and .visible-nav to preserve layout space on desktop
+   ========================================================================== */
+
+/* ---------- Header base ---------- */
+#mainHeader {
+  position: fixed; /* kept fixed-top behavior */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1100;
+  padding: 1rem 0;
+  background: transparent;
+  transition: background 200ms ease, box-shadow 200ms ease, padding 200ms ease;
+  &.header-transparent {
+    background: transparent;
+  }
+  &.header-solid {
+    background: $color06; /* tone preserved, previously #333333 */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  }
+}
+
+/* Container inside header: force single-row layout */
+#mainHeader .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: nowrap;
+}
+
+/* ---------- Desktop nav (left) ---------- */
+/* UPDATED: Reworked header/nav styles for clarity and stability. */
+/* .invisible-nav hides content but preserves layout width; .visible-nav shows it. */
+#desktopNav {
+  flex: 0 0 auto; /* do not grow */
+  align-self: center;
+
+  &.invisible-nav {
+    visibility: hidden;
+    opacity: 0;
+  }
+  &.visible-nav {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 180ms ease-in;
+  }
+
+  .nav {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 0;
+    .nav-link {
+      color: #fff;
+      padding: 0.25rem 0.5rem;
+    }
+  }
+}
+
+/* ---------- Header icons (desktop) ---------- */
+/* UPDATED: fixed sizing to avoid warping and keep right alignment */
+.header-icons {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.header-icon-img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  display: block;
+}
+
+/* mobile-specific smaller icons */
+@media (max-width: $bp-xsmall) {
+  .header-icon-img {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* ---------- Mobile hamburger & menu ---------- */
+/* UPDATED: mobile menu behavior consolidated and simplified */
+#mobileMenuToggle {
+  background: transparent;
+  border: 0;
+  padding: 0.25rem 0.5rem;
+  line-height: 1;
+  color: $color04;
+  display: none; /* shown at smaller breakpoints below */
+}
+
+/* Mobile menu container (dropdown panel that sits under header) */
+#mobileMenu {
+  display: none; /* toggled via .active */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: $color06;
+  padding: 1rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  z-index: 1200;
+
+  ul.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: 0;
+    li.nav-item {
+      a.nav-link {
+        color: #fff;
+        font-size: 1.05rem;
+        padding: 0.5rem 0.25rem;
+        &:hover,
+        &:focus,
+        &:active {
+          color: $color02;
+        }
+      }
+    }
+  }
+
+  .mobile-icons {
+    display: flex;
+    gap: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+
+    .header-icon-img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &.active {
+    display: block;
+  }
+}
+
+/* show hamburger on small screens and hide desktop nav */
+@media (max-width: 991.98px) {
+  #mobileMenuToggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #desktopNav {
+    display: none;
+  }
+}
+
+/* hide mobile menu on large screens */
+@media (min-width: 992px) {
+  #mobileMenu {
+    display: none;
+  }
+}
+
+/* shrink icons slightly when header becomes solid (subtle effect) */
+#mainHeader.header-solid .header-icon-img {
+  transform: scale(0.95);
+  transition: transform 0.15s ease;
+}
+
+/* ==========================================================================
+   HERO
+   ========================================================================== */
+
+#hero {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* changed 'left' -> 'flex-start' for correctness */
+  justify-content: center;
+  min-height: 100vh;
+  height: 100vh;
+  margin: auto;
+  padding: 0 5rem;
+  margin-bottom: 3.2rem;
+  text-align: left;
+
+  nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 2rem;
+    display: flex;
+    gap: 2rem;
+    align-content: center;
+  }
+}
+
+#typewriter-output,
+#description {
+  font-size: 5rem;
+}
+
+#description {
+  animation: fade-in-from-left 1.5s forwards;
+  animation-delay: 2s;
+  opacity: 0;
+}
+
+#cta {
+  margin-top: 1rem;
+  display: flex;
+  font-size: 1.5rem;
+  animation: fade-in-from-left 1.5s forwards;
+  animation-delay: 3s;
+  opacity: 0;
+}
+
+@keyframes fade-in-from-left {
+  0% {
+    transform: translateX(-5%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+/* ==========================================================================
+   FADE-IN & TYPEWRITER EFFECTS
+   ========================================================================== */
+
+.fade-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.styled-last-word {
+  display: inline-block;
+  color: $color04;
+}
+
+/* Blinking cursor effect */
+#typewriter-output {
+  border-right: 4px solid $color05;
+  line-height: 4.25rem;
+  padding-right: 10px;
+  display: inline-block;
+}
+
+@keyframes blink {
+  0% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: $color05;
+  }
+  100% {
+    border-color: transparent;
+  }
+}
+
+#typewriter-output.cursor {
+  animation: blink 1.25s step-end infinite;
+}
+
+/* ==========================================================================
+   SKILLS
+   ========================================================================== */
+
+#skills {
+  display: flex;
+  flex-direction: column;
+  font-size: 3rem;
+  background-color: $color04;
+  color: $color03;
+  min-height: 100vh;
+  padding: 10rem 2rem 20rem 2rem;
+  align-items: center;
+  gap: 5rem;
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 0% 100%);
+
+  span {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-items: center;
+    align-items: center;
+    gap: 2rem;
+  }
+}
+
+#tech-stack {
+  div {
+    min-width: 100px;
+    width: 100%;
+    font-size: 1.5rem;
+  }
+  img {
+    width: 75px;
+    height: 75px;
+  }
+  .background-required {
+    background-color: white;
+    padding: 0.5rem;
+  }
+  .clickable {
+    cursor: auto;
+  }
+  .always-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+
+/* ==========================================================================
+   PROJECTS
+   ========================================================================== */
+
+.background_blue {
+  background-color: $color04;
+}
+
+#projects {
+  display: flex;
+  flex-direction: column;
+  font-size: 3rem;
+  padding: 10rem 2rem 30rem 2rem;
+  gap: 5rem;
+  background-color: $color03;
+  min-height: 120vh;
+  align-items: center;
+//   clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+
+  ul {
+    list-style-type: disc;
+    list-style-position: outside;
+    padding-left: 40px;
+  }
+
+  h4 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+  }
+
+  .project-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-size: 1.5rem;
+    justify-items: center;
+    align-items: center;
+    max-width: $max-width;
+    gap: 2rem;
+
+    h4 {
+      margin-bottom: 1rem;
+    }
+
+    .project-description {
+      padding: 1rem;
+
+      .btn-container {
+        margin-top: 1rem;
+        display: flex;
+        font-size: 1.5rem;
+
+        .btn {
+          border-style: solid;
+          border-width: 2px 0px 2px 2px;
+        }
+
+        .last-btn {
+          border-width: 2px;
+        }
+      }
+    }
+  }
+}
+
+.project_demo {
+  max-width: 100%;
+  box-shadow: 0px 0px 10px 5px $color04;
+}
+
+/* ==========================================================================
+   ABOUT
+   ========================================================================== */
+
+#about {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  font-size: 3rem;
+  min-height: 100vh;
+  padding: 10rem 2rem 20rem 2rem;
+  background-color: $color04;
+  color: $color03;
+  align-items: center;
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 0% 100%);
+
+  .btn {
+    border-color: $color03;
+    border-style: solid;
+    border-width: 2px;
+    color: $color03;
+    width: 200px;
+    text-align: center;
+    transition: color 0.1s ease, background-color 0.2s ease;
+    margin-top: 1rem;
+
+    &:hover {
+      background-color: $color03;
+      color: $color04;
+    }
+  }
+
+  span {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-size: 1.5rem;
+    justify-items: center;
+    align-items: center;
+    max-width: $max-width;
+  }
+
+  .always-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+
+#profile-pic {
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 20%;
+  shape-outside: circle();
+}
+
+/* ==========================================================================
+   CONTACT
+   ========================================================================== */
+
+#contact {
+  display: flex;
+  flex-direction: column;
+  font-size: 3rem;
+  padding: 10rem 2rem;
+  gap: 5rem;
+  background-color: $color03;
+  min-height: 60vh;
+  align-items: center;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    width: 100%;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+
+    input,
+    textarea {
+      padding: 0.5rem;
+      border-radius: 2px;
+      font-family: inherit;
+      font-size: 1.5rem;
+      line-height: 1.5rem;
+    }
+
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    button {
+      font-size: 1.5rem;
+      color: $color04;
+      border-color: $color04;
+      margin: auto;
+      width: 200px;
+      border-style: solid;
+      border-width: 2px;
+      transition: color 0.1s ease, background-color 0.2s ease;
+
+      &:hover {
+        background-color: $color04;
+        color: $color03;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+
+footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: $color06;
+  min-height: 30vh;
+  align-items: center;
+  justify-content: center;
+  color: $color03;
+  font-size: 2.5rem;
+  padding: 2rem;
+
+  nav {
+    display: flex;
+    gap: 2rem;
+  }
+}
+
+/* ==========================================================================
+   UTILITIES / MISC
+   ========================================================================== */
+
+/* Keep scrollNav hidden for accessibility when aria-hidden true */
+#scrollNav[aria-hidden="true"] {
+  display: none;
+}
+
+/* legacy helper: keep element present but hidden (used for desktop nav placeholder) */
+.invisible-nav {
+  visibility: hidden;
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+
+/* Large breakpoint tweaks */
+@media (max-width: $bp-large) {
+  #typewriter-output,
+  #description {
+    font-size: 3rem;
+  }
+
+  #skills span {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Medium breakpoint tweaks */
+@media (max-width: $bp-medium) {
+  #typewriter-output,
+  #description {
+    font-size: 2rem;
+  }
+
+  #about {
+    span {
+      display: flex;
+      flex-direction: column;
+      font-size: 1rem;
+      gap: 2rem;
+    }
+    .always-stack {
+      align-items: center;
+    }
+  }
+}
+
+/* small screens */
+@media (max-width: $bp-sm) {
+  nav img {
+    width: 24px;
+    height: 24px;
+  }
+
+  #cta {
+    font-size: 1rem;
+  }
+
+  #typewriter-output {
+    border-right: 2px solid $color05;
+    line-height: 2.25rem;
+    padding-right: 10px;
+    display: inline-block;
+  }
+
+  #skills {
+    font-size: 2rem;
+    min-height: 100vh;
+    padding: 5rem 1rem 20rem 1rem;
+
+    span {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-items: center;
+      align-items: center;
+      gap: 2rem;
+    }
+  }
+
+  #tech-stack div {
+    font-size: 1rem;
+  }
+
+  #projects {
+    font-size: 2rem;
+    p {
+      font-size: 1rem;
+    }
+    .project-container {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .btn-container {
+      align-items: center;
+      width: 100%;
+      text-align: center;
+      justify-content: center;
+    }
+    .btn {
+      font-size: 1rem;
+    }
+  }
+
+  #about {
+    font-size: 2rem;
+    align-items: center;
+    padding: 5rem 1rem 20rem 1rem;
+    span {
+      font-size: 1rem;
+    }
+  }
+
+  #contact {
+    font-size: 2rem;
+    padding: 10rem 1rem 20rem 1rem;
+    min-height: 80vh;
+    form {
+      font-size: 1rem;
+      input,
+      textarea {
+        font-size: 1rem;
+        line-height: 1rem;
+      }
+    }
+    .submit-btn {
+      font-size: 1rem;
+    }
+  }
+
+  #form-response {
+    font-size: 1rem;
+  }
+}
+
+/* x-small screens */
+@media (max-width: $bp-xsmall) {
+  #typewriter-output {
+    font-size: 1.5rem;
+  }
+  #description {
+    font-size: 1.25rem;
+  }
+  #cta {
+    flex-direction: column;
+    font-size: 1rem;
+    border-radius: 1px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+  .btn {
+    border-width: 2px 2px 0px 2px;
+  }
+  #skills {
+    font-size: 1.5rem;
+    span {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  #projects {
+    font-size: 1.5rem;
+    .project-container {
+      .project-description {
+        .btn-container {
+          flex-direction: column;
+          text-align: center;
+          .btn {
+            border-style: solid;
+            border-width: 2px 2px 0px 2px;
+          }
+          .last-btn {
+            border-width: 2px;
+          }
+        }
+      }
+    }
+  }
+  #about {
+    font-size: 1.5rem;
+  }
+  #profile-pic {
+    max-width: 200px;
+  }
+  #contact {
+    font-size: 1.5rem;
+  }
+}
