@@ -11940,11 +11940,7 @@ footer {
 }
 
 /* ==========================================================================
-   HEADER & NAV — FULL REWRITE (A1)
-   - Desktop: left desktop nav occupies space over hero (invisible but keeps width)
-   - Desktop: right icons remain fixed/right
-   - Mobile: hamburger shown, toggles #mobileMenu, which includes icons
-   - Uses .invisible-nav and .visible-nav to preserve layout space on desktop
+   HEADER & NAV
    ========================================================================== */
 /* ---------- Header base ---------- */
 #mainHeader {
@@ -11961,7 +11957,7 @@ footer {
   background: transparent;
 }
 #mainHeader.header-solid {
-  background: #333333; /* tone preserved, previously #333333 */
+  background: #333333;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
 }
 
@@ -11975,8 +11971,6 @@ footer {
 }
 
 /* ---------- Desktop nav (left) ---------- */
-/* UPDATED: Reworked header/nav styles for clarity and stability. */
-/* .invisible-nav hides content but preserves layout width; .visible-nav shows it. */
 #desktopNav {
   flex: 0 0 auto; /* do not grow */
   align-self: center;
@@ -12249,28 +12243,28 @@ footer {
   background-color: #0a66c2;
 }
 
-#projects {
+#projects, .projects {
   display: flex;
   flex-direction: column;
   font-size: 3rem;
   padding: 10rem 2rem 30rem 2rem;
   gap: 5rem;
   background-color: #fbfbff;
-  min-height: 120vh;
+  min-height: 80vh;
   align-items: center;
 }
-#projects ul {
+#projects ul, .projects ul {
   list-style-type: disc;
   list-style-position: outside;
   padding-left: 40px;
 }
-#projects h4, #projects .h4 {
+#projects h4, #projects .h4, .projects h4, .projects .h4 {
   font-size: 2rem;
 }
-#projects p {
+#projects p, .projects p {
   font-size: 1.5rem;
 }
-#projects .project-container {
+#projects .project-container, .projects .project-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   font-size: 1.5rem;
@@ -12279,28 +12273,102 @@ footer {
   max-width: 1800px;
   gap: 2rem;
 }
-#projects .project-container h4, #projects .project-container .h4 {
+#projects .project-container h4, #projects .project-container .h4, .projects .project-container h4, .projects .project-container .h4 {
   margin-bottom: 1rem;
 }
-#projects .project-container .project-description {
+#projects .project-container .project-description, .projects .project-container .project-description {
   padding: 1rem;
 }
-#projects .project-container .project-description .btn-container {
+#projects .project-container .project-description .btn-container, .projects .project-container .project-description .btn-container {
   margin-top: 1rem;
   display: flex;
   font-size: 1.5rem;
 }
-#projects .project-container .project-description .btn-container .btn {
+#projects .project-container .project-description .btn-container .btn, .projects .project-container .project-description .btn-container .btn {
   border-style: solid;
   border-width: 2px 0px 2px 2px;
 }
-#projects .project-container .project-description .btn-container .last-btn {
+#projects .project-container .project-description .btn-container .last-btn, .projects .project-container .project-description .btn-container .last-btn {
   border-width: 2px;
 }
-
-.project_demo {
+#projects .project_demo, .projects .project_demo {
   max-width: 100%;
   box-shadow: 0px 0px 10px 5px #0a66c2;
+}
+
+.alt-project {
+  display: flex;
+  flex-direction: column;
+  font-size: 3rem;
+  padding: 10rem 2rem 30rem 2rem;
+  gap: 5rem;
+  min-height: 80vh;
+  align-items: center;
+  background-color: #0a66c2;
+  color: #fbfbff;
+}
+.alt-project ul {
+  list-style-type: disc;
+  list-style-position: outside;
+  padding-left: 40px;
+}
+.alt-project h4, .alt-project .h4 {
+  font-size: 2rem;
+}
+.alt-project p {
+  font-size: 1.5rem;
+}
+.alt-project .project-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-size: 1.5rem;
+  justify-items: center;
+  align-items: center;
+  max-width: 1800px;
+  gap: 2rem;
+}
+.alt-project .project-container h4, .alt-project .project-container .h4 {
+  margin-bottom: 1rem;
+}
+.alt-project .project-container .project-description {
+  padding: 1rem;
+}
+.alt-project .project-container .project-description .btn-container {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1.5rem;
+}
+.alt-project .project-container .project-description .btn-container .btn {
+  border-style: solid;
+  border-color: white;
+  color: white;
+  border-width: 2px 0px 2px 2px;
+}
+.alt-project .project-container .project-description .btn-container .last-btn {
+  border-width: 2px;
+}
+.alt-project .project-container .project-description .btn:hover {
+  color: #0a66c2;
+  background-color: #fff;
+}
+.alt-project .project_demo {
+  max-width: 100%;
+  box-shadow: 0px 0px 10px 5px #1c1018;
+}
+
+.return_home {
+  margin-top: 15rem;
+}
+.return_home .btn {
+  border-style: solid;
+  border-color: white;
+  color: white;
+  border-width: 2px;
+}
+.return_home .btn:hover {
+  color: #0a66c2;
+  background-color: #fff;
 }
 
 /* ==========================================================================

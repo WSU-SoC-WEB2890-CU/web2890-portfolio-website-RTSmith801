@@ -99,11 +99,7 @@ footer {
 }
 
 /* ==========================================================================
-   HEADER & NAV — FULL REWRITE (A1)
-   - Desktop: left desktop nav occupies space over hero (invisible but keeps width)
-   - Desktop: right icons remain fixed/right
-   - Mobile: hamburger shown, toggles #mobileMenu, which includes icons
-   - Uses .invisible-nav and .visible-nav to preserve layout space on desktop
+   HEADER & NAV
    ========================================================================== */
 
 /* ---------- Header base ---------- */
@@ -120,7 +116,7 @@ footer {
     background: transparent;
   }
   &.header-solid {
-    background: $color06; /* tone preserved, previously #333333 */
+    background: $color06; 
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
   }
 }
@@ -135,8 +131,6 @@ footer {
 }
 
 /* ---------- Desktop nav (left) ---------- */
-/* UPDATED: Reworked header/nav styles for clarity and stability. */
-/* .invisible-nav hides content but preserves layout width; .visible-nav shows it. */
 #desktopNav {
   flex: 0 0 auto; /* do not grow */
   align-self: center;
@@ -433,16 +427,16 @@ footer {
   background-color: $color04;
 }
 
-#projects {
+#projects, .projects {
   display: flex;
   flex-direction: column;
   font-size: 3rem;
   padding: 10rem 2rem 30rem 2rem;
   gap: 5rem;
   background-color: $color03;
-  min-height: 120vh;
+  min-height: 80vh;
   align-items: center;
-//   clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+
 
   ul {
     list-style-type: disc;
@@ -490,12 +484,107 @@ footer {
       }
     }
   }
+
+  .project_demo {
+    max-width: 100%;
+    box-shadow: 0px 0px 10px 5px $color04;
+    }
 }
 
-.project_demo {
-  max-width: 100%;
-  box-shadow: 0px 0px 10px 5px $color04;
+.alt-project{
+    display: flex;
+    flex-direction: column;
+    font-size: 3rem;
+    padding: 10rem 2rem 30rem 2rem;
+    gap: 5rem;
+    min-height: 80vh;
+    align-items: center;
+    background-color: $color04;
+    color: $color03;
+    ul {
+        list-style-type: disc;
+        list-style-position: outside;
+        padding-left: 40px;
+    }
+
+    h4 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
+
+    .project-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        font-size: 1.5rem;
+        justify-items: center;
+        align-items: center;
+        max-width: $max-width;
+        gap: 2rem;
+
+        h4 {
+            margin-bottom: 1rem;
+        }
+
+    .project-description {
+        padding: 1rem;
+
+        .btn-container {
+        margin-top: 1rem;
+        display: flex;
+        justify-content: flex-end;
+        font-size: 1.5rem;
+
+        .btn {
+            border-style: solid;
+            border-color: white;
+            color: white;
+            border-width: 2px 0px 2px 2px;
+        }
+
+        .last-btn {
+            border-width: 2px;
+        }
+        }
+
+        .btn:hover {
+            color: $color04;
+            background-color: #fff;
+        }
+    }
+    }
+
+    .project_demo {
+    max-width: 100%;
+    box-shadow: 0px 0px 10px 5px $color05;
+    }
+
+    
 }
+
+.return_home {
+
+
+    margin-top: 15rem;
+    
+    .btn {
+        border-style: solid;
+        border-color: white;
+        color: white;
+        border-width: 2px;
+    }
+
+    .btn:hover {
+        color: $color04;
+        background-color: #fff;
+    }
+
+    
+}
+
+
 
 /* ==========================================================================
    ABOUT

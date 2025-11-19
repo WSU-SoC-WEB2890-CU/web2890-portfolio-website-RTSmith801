@@ -5,43 +5,46 @@ document.addEventListener("DOMContentLoaded", () => {
   const mobileMenu = document.getElementById("mobileMenu")
   const hero = document.getElementById("hero")
 
-  const heroBottom = hero.offsetHeight * 0.9
+  // Detect whether hero exists
+  const hasHero = !!hero
+  const heroBottom = hasHero ? hero.offsetHeight * 0.9 : null
+
+  // If there's *no* hero, force header solid style once
+  if (!hasHero) {
+    header.classList.add("header-solid")
+    header.classList.remove("header-transparent")
+  }
 
   // -------------------------
   // MOBILE MENU TOGGLE
   // -------------------------
   mobileToggle.addEventListener("click", () => {
-    // console.log("Mobile toggle clicked!")
     mobileMenu.classList.toggle("active")
 
-    // Update ARIA for accessibility
     const expanded = mobileToggle.getAttribute("aria-expanded") === "true"
     mobileToggle.setAttribute("aria-expanded", !expanded)
-    if (window.scrollY < heroBottom) {
-      if (header.classList.contains("header-transparent")) {
-        header.classList.remove("header-transparent")
-        header.classList.add("header-solid")
-      } else {
-        header.classList.add("header-transparent")
-        header.classList.remove("header-solid")
-      }
+
+    // Only toggle transparency if hero exists
+    if (hasHero && window.scrollY < heroBottom) {
+      header.classList.toggle("header-transparent")
+      header.classList.toggle("header-solid")
     }
   })
 
   // -------------------------
   // HEADER SCROLL BEHAVIOR
   // -------------------------
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > heroBottom) {
-      header.classList.remove("header-transparent")
-      header.classList.add("header-solid")
-
-      desktopNav.classList.remove("invisible-nav")
-    } else {
-      header.classList.add("header-transparent")
-      header.classList.remove("header-solid")
-
-      desktopNav.classList.add("invisible-nav")
-    }
-  })
+  if (hasHero) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > heroBottom) {
+        header.classList.remove("header-transparent")
+        header.classList.add("header-solid")
+        desktopNav.classList.remove("invisible-nav")
+      } else {
+        header.classList.add("header-transparent")
+        header.classList.remove("header-solid")
+        desktopNav.classList.add("invisible-nav")
+      }
+    })
+  }
 })
