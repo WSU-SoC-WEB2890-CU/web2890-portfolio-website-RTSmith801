@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Rick Smith - Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index,follow">
+
+    <!-- CSS Reset & Libraries -->
+    <link href="./stylesheets/reset.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./stylesheets/main.css" rel="stylesheet">
+</head>
+
+<body class="dark_mode_toggle">
+
+    <!-- ===========================
+       SITE HEADER
+       =========================== -->
+    <header id="mainHeader" class="header-transparent fixed-top py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+
+            <!-- MOBILE HAMBURGER -->
+            <button id="mobileMenuToggle" class="btn d-lg-none p-0 m-0" aria-expanded="false">
+                <i class="bi bi-list fs-1"></i>
+            </button>
+
+            <!-- DESKTOP NAVIGATION -->
+            <nav id="desktopNav" class=" d-none d-lg-flex">
+                <ul class="nav mb-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- DESKTOP ICONS -->
+            <div class="header-icons d-none d-lg-flex align-items-center gap-4">
+                <img src="./icons/sun_icon.png" id="toggleColorButton" class="header-icon-img clickable"
+                    alt="Toggle Dark Mode" />
+                <a href="https://www.linkedin.com/in/rtsmith801/" target="_blank">
+                    <img src="./icons/linkedin_blue.png" class="header-icon-img clickable" alt="LinkedIn" />
+                </a>
+                <a href="https://github.com/RTSmith801" target="_blank">
+                    <img src="./icons/github-mark-blue.svg" class="header-icon-img clickable" alt="GitHub" />
+                </a>
+                <a href="https://drive.google.com/file/d/1vqVfGto_qbv9OZ-Q_geAvoFOlkkI3bne/view?usp=sharing"
+                    target="_blank">
+                    <img src="./icons/resume_icon_blue.png" class="header-icon-img clickable" alt="Resume" />
+                </a>
+            </div>
+
+            <!-- MOBILE MENU -->
+            <div id="mobileMenu" class="d-lg-none">
+                <ul class="nav flex-column mb-3">
+                    <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+                </ul>
+
+                <!-- MOBILE ICONS -->
+                <div class="d-flex gap-3 pt-2 border-top">
+                    <img src="./icons/sun_icon.png" id="toggleColorButtonMobile" class="header-icon-img clickable"
+                        alt="Toggle Dark Mode" />
+                    <a href="https://www.linkedin.com/in/rtsmith801/" target="_blank">
+                        <img src="./icons/linkedin_blue.png" class="header-icon-img clickable" alt="LinkedIn" />
+                    </a>
+                    <a href="https://github.com/RTSmith801" target="_blank">
+                        <img src="./icons/github-mark-blue.svg" class="header-icon-img clickable" alt="GitHub" />
+                    </a>
+                    <a href="https://drive.google.com/file/d/1vqVfGto_qbv9OZ-Q_geAvoFOlkkI3bne/view?usp=sharing"
+                        target="_blank">
+                        <img src="./icons/resume_icon_blue.png" class="header-icon-img clickable" alt="Resume" />
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <main>
+        <section id="top"></section>
+
+
+
+        <!-- ===========================
+         PROJECTS SECTION
+         =========================== -->
+
+        <!-- === LIGHT BACKGROUND ==== -->
+        <section id="projects" class="dark_mode_toggle">
+            <h1 class="fade-section">Projects</h1>
+
+            <!-- Project: Smith Kitchen Chronicles -->
+            <div class="fade-section project-container">
+                <div class="project-description">
+                    <h4>Smith Kitchen Chronicles</h4>
+                    <p>This is a fully functional CRUD application built using
+                        React + Vite. The app allows users to manage their
+                        collection of recipes by adding, viewing, editing, and
+                        deleting recipes. Firebase serves as the backend,
+                        handling data storage and retrieval.</p>
+                    <h5>Features:</h5>
+                    <ul>
+                        <li>Multi-page layout: Main Recipe List, Recipe Details Modal, Recipe Creation & Editing Form
+                        </li>
+                        <li>Users can view, add, edit, and delete recipes in real-time.</li>
+                    </ul>
+                    <div class="btn-container">
+                        <a href="https://smith-kitchen-chronicles.netlify.app/." target="_blank" class="btn">See
+                            Live</a>
+                        <a href="https://github.com/RTSmith801/smith-kitchen-chronicles" target="_blank"
+                            class="btn last-btn">Source
+                            Code</a>
+                    </div>
+                </div>
+                <img src="./images/recipe_app_screenshot.JPG" data-static="./images/recipe_app_screenshot.JPG"
+                    data-gif="./files/recipe_app_demo.gif" alt="Recipe App Demo"
+                    class="toggle-gif project_demo fade-section" />
+            </div>
+
+        </section>
+
+
+        <!-- === BLUE BACKGROUND ==== -->
+        <section id="" class="alt-project">
+
+            <!-- Project: Flutter Todo App -->
+            <div class="fade-section project-container">
+                <img src="./images/flutter_app_screenshot.JPG" data-static="./images/flutter_app_screenshot.JPG"
+                    data-gif="./files/flutter_firebase_todo_demo.gif" alt="Flutter App Demo"
+                    class="toggle-gif project_demo fade-section" />
+                <div class="project-description">
+                    <h4>Flutter Todo App</h4>
+                    <p>This functional CRUD (Create, Read, Update, Delete)
+                        application was developed to explore Flutter’s
+                        development environment within Android Studio.
+                        Leveraging Firebase, the app supports user
+                        authentication via email and password. Upon signing in,
+                        users can create and manage lists, update tasks, and
+                        delete list items, ensuring seamless data handling within
+                        the application.</p>
+                    <h5>Features:</h5>
+                    <ul>
+                        <li>Multi-page layout: Splash, Login, Sign Up, Home/Todo Page</li>
+                        <li>Email/password authentication; each user has their own task database</li>
+                    </ul>
+                    <div class="btn-container">
+                        <a href="https://flutterfirebasetodo-6dd0b.web.app/" target="_blank" class="btn">See Live</a>
+                        <a href="https://github.com/RTSmith801/flutter_firebase_todo" target="_blank"
+                            class="btn last-btn">Source
+                            Code</a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- === LIGHT BACKGROUND ==== -->
+        <section id="" class="dark_mode_toggle projects">
+
+
+            <!-- Project: Iridium Films -->
+            <div class="fade-section project-container">
+                <div class="project-description">
+                    <h4>Iridium Films</h4>
+
+                    <p>This portfolio website was developed for a Salt Lake City–
+                        based filmmaker and producer to showcase their creative
+                        work and highlight featured film projects. The site,
+                        IridiumFilms.com, consists of four primary pages, each
+                        designed to provide an engaging and cinematic viewing
+                        experience. Both the homepage and the dedicated project
+                        pages feature embedded web players for streaming high-
+                        quality video content directly on the site.</p>
+
+
+                    <p>A custom JavaScript-powered contact form was also
+                        implemented, allowing visitors to send messages directly
+                        to the client, streamlining communication and potential
+                        collaborations.</p>
+
+                    <div class="btn-container">
+                        <a href="https://iridiumfilms.com/" target="_blank" class="btn last-btn">See
+                            Live</a>
+                    </div>
+                </div>
+                <img src="./images/iridium_films_screenshot.JPG" data-static="./images/iridium_films_screenshot.JPG"
+                    alt="Iridium Films Website Screenshot" class="project_demo fade-section" />
+            </div>
+
+        </section>
+
+
+        <!-- === BLUE BACKGROUND ==== -->
+        <section id="" class="alt-project">
+
+            <!-- Project: Bettertrack App -->
+            <div class="fade-section project-container">
+                <img src="./images/bettertrack_screenshot.JPG" data-static="./images/bettertrack_screenshot.JPG"
+                    alt="BetterTrack App Screenshot" class="project_demo fade-section" />
+                <div class="project-description">
+                    <h4>BetterTrack</h4>
+                    <p>BetterTrack is a responsive web application designed to
+                        help users track their daily routines, fitness activities, and
+                        wellness goals through a structured journaling and
+                        progress system. Built with React, the app features secure
+                        login authentication, a motivational Quote of the Day
+                        (QOTD) fetched from an external API, and an interactive
+                        calendar interface that allows users to create, edit, and
+                        delete daily task cards. Each entry supports customizable
+                        fields—such as title, quantity, weight, and notes—making
+                        it ideal for tracking workouts, health habits, or personal
+                        milestones. The application leverages React’s useState
+                        and useEffect hooks for state management and dynamic
+                        UI updates, with styling implemented in SASS for a
+                        cohesive, modern aesthetic.</p>
+                    <div class="btn-container">
+                        <a href="https://bettertrack.netlify.app/" target="_blank" class="btn">See Live</a>
+                        <a href="https://github.com/RTSmith801/bettertrack" target="_blank" class="btn last-btn">Source
+                            Code</a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- === LIGHT BACKGROUND ==== -->
+        <section id="" class="dark_mode_toggle projects">
+
+
+            <!-- Project: Iridium Films -->
+            <div class="fade-section project-container">
+                <div class="project-description">
+                    <h4>Catalyst Coordination</h4>
+
+                    <p>Catalyst Coordination is a professional Bootstrap-based
+                        website developed for a local marketing business in Utah.
+                        The site was designed to establish a strong online
+                        presence, highlight the company’s services, and provide
+                        potential clients with clear pathways to connect. Built
+                        with a mobile-first, responsive design, the website
+                        ensures a seamless viewing experience across all
+                        devices. Its clean layout and modern aesthetic were
+                        crafted to reflect the company’s branding and
+                        professional tone. Key sections include service
+                        overviews, client testimonials, and a custom contact form
+                        that routes inquiries directly to the business, streamlining
+                        communication and lead generation</p>
+
+                    <div class="btn-container">
+                        <a href="https://icarus.cs.weber.edu/~rs37360/web_2620_advanced_css/web-2620-final-RTSmith801/"
+                            target="_blank" class="btn">See
+                            Live</a>
+                        <a href="https://github.com/WSU-WEB2620-AA/web-2620-final-RTSmith801" target="_blank"
+                            class="btn last-btn">Source
+                            Code</a>
+                    </div>
+                </div>
+                <img src="./images/catalyst_coordination_screenshot.JPG"
+                    data-static="./images/catalyst_coordination_screenshot.JPG"
+                    alt="Catalyst Coordination Website Screenshot" class="project_demo fade-section" />
+            </div>
+
+        </section>
+
+
+        <!-- === BLUE BACKGROUND ==== -->
+        <section id="" class="alt-project">
+
+            <!-- Project: Bettertrack App -->
+            <div class="fade-section project-container">
+                <img src="./images/chaos_circus_screenshot.JPG" data-static="./images/chaos_circus_screenshot.JPG"
+                    alt="Chaos Circus Screenshot" class="project_demo fade-section" />
+                <div class="project-description">
+                    <h4>Chaos Circus Co</h4>
+                    <p>This will serve as the second project for the Web 2890
+                        course. I will be building a custom website for a local
+                        entertainment production company based here in Salt
+                        Lake. The company currently uses Instagram and
+                        Facebook to post information regarding upcoming events.
+                        Eventbrite is utilized for ticket sales. The website I will
+                        build will create a central hub that will automatically
+                        retrieve and display their latest posts and events using
+                        API calls.</p>
+                    <div class="btn-container">
+                        <a href="#" target="_blank" class="btn">Case Study</a>
+                        <a href="https://chaos-circus.netlify.app/" target="_blank" class="btn">See Live</a>
+                        <a href="https://github.com/WSU-SoC-WEB2890-CU/web2890-project-2-RTSmith801" target="_blank"
+                            class="btn last-btn">Source
+                            Code</a>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- <div class="fade-section text-center mb-0 return_home">
+                <a href="./index.html#contact" class="btn">Contact Me</a>
+            </div> -->
+
+        </section>
+
+
+        <!-- ===========================
+       FOOTER
+       =========================== -->
+        <footer class="d-flex flex-column align-items-center justify-content-center gap-3 py-4 bg-dark text-light">
+            <a class="nav-link" href="#top">▵</a>
+            <nav class="d-flex gap-3">
+                <a href="https://www.linkedin.com/in/rtsmith801/" target="_blank">
+                    <img src="./icons/linkedin_white.png" class="clickable" alt="LinkedIn" title="LinkedIn" />
+                </a>
+                <a href="https://github.com/RTSmith801" target="_blank">
+                    <img src="./icons/github-mark-white.svg" class="clickable" alt="GitHub" title="GitHub" />
+                </a>
+                <a href="https://drive.google.com/file/d/1vqVfGto_qbv9OZ-Q_geAvoFOlkkI3bne/view?usp=sharing"
+                    target="_blank">
+                    <img src="./icons/resume_icon_white.png" class="clickable" alt="Resume" title="Resume" />
+                </a>
+            </nav>
+        </footer>
+
+        <!-- ===========================
+       JAVASCRIPT
+       =========================== -->
+        <script type="module" src="./javascripts/dark_mode.js"></script>
+        <script type="module" src="./javascripts/fade_section.js"></script>
+        <script type="module" src="./javascripts/menu.js"></script>
+        <script type="module" src="./javascripts/gif_toggle.js"></script>
+
+
+</body>
+
+</html>
