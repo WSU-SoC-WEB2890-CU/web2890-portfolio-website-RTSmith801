@@ -12378,18 +12378,18 @@ footer {
   clip-path: polygon(0 0, 100% 0, 100% 75%, 0% 100%);
 }
 #about .btn {
-  border-color: #fbfbff;
+  border-color: #E1BC29;
   border-style: solid;
   border-width: 2px;
-  color: #fbfbff;
+  color: #E1BC29;
   width: 200px;
   text-align: center;
   transition: color 0.1s ease, background-color 0.2s ease;
   margin-top: 1rem;
 }
 #about .btn:hover {
-  background-color: #fbfbff;
-  color: #0a66c2;
+  background-color: #E1BC29;
+  color: #fbfbff;
 }
 #about span {
   display: grid;
