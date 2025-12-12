@@ -3,26 +3,361 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Portfolio website</title>
+  <title>Rick Smith - Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="index,follow">
-  <meta name="description" content="TODO: Portfolio website ...">
 
-  <link rel="stylesheet" href="./stylesheets/main.scss">
+  <!-- CSS Reset & Libraries -->
+  <link href="./stylesheets/reset.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="./stylesheets/main.css" rel="stylesheet">
 </head>
 
-<body>
-  <!-- Your HTML goes here -->
-  <h1 class="display-2 text-center my-5 py-5">
-    <span class="d-block py-5 mt-5">
-      <i class="bi bi-filetype-html text-primary"></i> / 
-      <i class="bi bi-filetype-css text-danger"></i> / 
-      <i class="bi bi-filetype-js text-success"></i>
-    </span>
-    
-    Portfolio Website
-  </h1>
+<body class="dark_mode_toggle">
 
+  <!-- ===========================
+       SITE HEADER
+       =========================== -->
+  <header id="mainHeader" class="header-transparent fixed-top py-3">
+    <div class="container d-flex justify-content-between align-items-center">
+
+      <!-- MOBILE HAMBURGER -->
+      <button id="mobileMenuToggle" class="d-lg-none p-0 m-0" aria-expanded="false">
+        <i class="bi bi-list fs-1 dark_mode_accent hamburgerIconMobile"></i>
+      </button>
+
+      <!-- DESKTOP NAVIGATION -->
+      <nav id="desktopNav" class="invisible-nav d-none d-lg-flex">
+        <ul class="nav mb-0">
+          <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- DESKTOP ICONS -->
+      <div class="header-icons d-none d-lg-flex align-items-center gap-4">
+        <img src="./icons/moon_icon_blue.png" id="toggleColorButton" class="header-icon-img clickable toggleColorButton"
+          alt="Toggle Dark Mode" />
+        <a href="https://www.linkedin.com/in/rtsmith801/" target="_blank">
+          <img src="./icons/linkedin_icon_blue.png" id="linkedinIcon" class="header-icon-img clickable"
+            alt="LinkedIn" />
+        </a>
+        <a href="https://github.com/RTSmith801" target="_blank">
+          <img src="./icons/github-mark-blue.svg" id="githubIcon" class="header-icon-img clickable" alt="GitHub" />
+        </a>
+        <a href="https://drive.google.com/file/d/1vqVfGto_qbv9OZ-Q_geAvoFOlkkI3bne/view?usp=sharing" target="_blank">
+          <img src="./icons/resume_icon_blue.png" id="resumeIcon" class="header-icon-img clickable" alt="Resume" />
+        </a>
+      </div>
+
+      <!-- MOBILE MENU -->
+      <div id="mobileMenu" class="d-lg-none">
+        <ul class="nav flex-column mb-3">
+          <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+
+        <!-- MOBILE ICONS -->
+        <div class="d-flex gap-3 pt-2 border-top">
+          <img src="./icons/moon_icon_blue.png" id="toggleColorButtonMobile"
+            class="header-icon-img clickable toggleColorButtonMobile" alt="Toggle Dark Mode" />
+          <a href="https://www.linkedin.com/in/rtsmith801/" target="_blank">
+            <img src="./icons/linkedin_icon_blue.png" id="linkedinIconMobile" class="header-icon-img clickable"
+              alt="LinkedIn" />
+          </a>
+          <a href="https://github.com/RTSmith801" target="_blank">
+            <img src="./icons/github-mark-blue.svg" id="githubIconMobile" class="header-icon-img clickable"
+              alt="GitHub" />
+          </a>
+          <a href="https://drive.google.com/file/d/1vqVfGto_qbv9OZ-Q_geAvoFOlkkI3bne/view?usp=sharing" target="_blank">
+            <img src="./icons/resume_icon_blue.png" id="resumeIconMobile" class="header-icon-img clickable"
+              alt="Resume" />
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===========================
+         HERO SECTION
+         =========================== -->
+    <section id="hero" class="dark_mode_toggle d-flex flex-column justify-content-center min-vh-100">
+      <div class="container text-center text-lg-start px-3">
+        <h1>
+          <div id="typewriter-output" data-phrase="Hi, my name is Rick."></div>
+          <h2>I'm a software developer.</h2>
+        </h1>
+        <div id="cta" class="d-flex flex-wrap justify-content-center justify-content-lg-start mt-3">
+          <a class="btn dark_mode_accent" href="#skills">Skills</a>
+          <a class="btn dark_mode_accent" href="#projects">Projects</a>
+          <a class="btn dark_mode_accent" href="#about">About</a>
+          <a class="btn dark_mode_accent" href="#contact">Contact</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===========================
+         SKILLS SECTION
+         =========================== -->
+    <section id="skills" class="dark_mode_accent">
+      <h3 class="fade-section">Skills</h3>
+      <span id="tech-stack" class="fade-section">
+        <!-- Each skill: icon + label -->
+        <div class="always-stack clickable">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" />HTML5
+        </div>
+        <div class="always-stack clickable">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain-wordmark.svg" alt="CSS"
+            class="background-required dark_mode_toggle" />CSS3
+        </div>
+        <div class="always-stack clickable">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+            alt="JavaScript" />JavaScript
+        </div>
+        <div class="always-stack clickable">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />React
+        </div>
+        <div class="always-stack clickable">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg" alt="MySQL"
+            class="background-required dark_mode_toggle" />MySQL
+        </div>
+        <div class="always-stack clickable">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C"
+            class="background-required dark_mode_toggle" />C
+        </div>
+        <div class="always-stack clickable">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#" />C#
+        </div>
+        <div class="always-stack clickable">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"
+            class="background-required dark_mode_toggle" />Java
+        </div>
+        <div class="always-stack clickable">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original-wordmark.svg"
+            alt="Unity" />Unity
+        </div>
+        <div class="always-stack clickable">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain-wordmark.svg"
+            alt="Firebase" />Firebase
+        </div>
+        <div class="always-stack clickable">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg"
+            alt="Flutter" />Flutter
+        </div>
+        <div class="always-stack clickable">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VSCode"
+            class="background-required dark_mode_toggle" />VS Code
+        </div>
+        <div class="always-stack clickable">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original-wordmark.svg" alt="Git" />Git
+        </div>
+        <div class="always-stack clickable">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"
+            class="background-required dark_mode_toggle" />Python
+        </div>
+        <div class="always-stack clickable">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" alt="Sass" />Sass
+        </div>
+        <div class="always-stack clickable">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg" alt="Selenium"
+            class="background-required dark_mode_toggle" />Selenium
+        </div>
+        <div class="always-stack clickable">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" />Linux
+        </div>
+        <div class="always-stack clickable">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Bash" />Bash
+        </div>
+      </span>
+    </section>
+
+    <!-- ===========================
+         PROJECTS SECTION
+         =========================== -->
+    <section id="projects" class="dark_mode_toggle">
+      <h3 class="fade-section">Projects</h3>
+
+      <!-- Project: Smith Kitchen Chronicles -->
+      <div class="fade-section project-container">
+        <div class="project-description">
+          <h4>Smith Kitchen Chronicles</h4>
+          <p>This is a fully functional CRUD application built using
+            React + Vite. The app allows users to manage their
+            collection of recipes by adding, viewing, editing, and
+            deleting recipes. Firebase serves as the backend,
+            handling data storage and retrieval.</p>
+          <h5>Features:</h5>
+          <ul>
+            <li>Multi-page layout: Main Recipe List, Recipe Details Modal, Recipe Creation & Editing Form</li>
+            <li>Users can view, add, edit, and delete recipes in real-time.</li>
+          </ul>
+          <div class="btn-container">
+            <a href="https://smith-kitchen-chronicles.netlify.app/." target="_blank" class="btn dark_mode_accent">See
+              Live</a>
+            <a href="https://github.com/RTSmith801/smith-kitchen-chronicles" target="_blank"
+              class="btn dark_mode_accent last-btn">Source
+              Code</a>
+          </div>
+        </div>
+        <img src="./images/recipe_app_screenshot.JPG" data-static="./images/recipe_app_screenshot.JPG"
+          data-gif="./files/recipe_app_demo.gif" alt="Recipe App Demo"
+          class="toggle-gif project_demo fade-section dark_mode_accent" />
+      </div>
+
+    </section>
+
+
+    <!-- === BLUE BACKGROUND ==== -->
+    <section id="" class="projects alt-project dark_mode_accent">
+
+      <!-- Project: Bettertrack App -->
+      <div class="fade-section project-container">
+        <img src="./images/bettertrack_screenshot.JPG" data-static="./images/bettertrack_screenshot.JPG"
+          alt="BetterTrack App Screenshot" class="project_demo fade-section" />
+        <div class="project-description">
+          <h4>BetterTrack</h4>
+          <p>BetterTrack is a responsive web application designed to
+            help users track their daily routines, fitness activities, and
+            wellness goals through a structured journaling and
+            progress system. Built with React, the app features secure
+            login authentication, a motivational Quote of the Day
+            (QOTD) fetched from an external API, and an interactive
+            calendar interface that allows users to create, edit, and
+            delete daily task cards. Each entry supports customizable
+            fields—such as title, quantity, weight, and notes—making
+            it ideal for tracking workouts, health habits, or personal
+            milestones. The application leverages React’s useState
+            and useEffect hooks for state management and dynamic
+            UI updates, with styling implemented in SASS for a
+            cohesive, modern aesthetic.</p>
+          <div class="btn-container">
+            <a href="https://bettertrack.netlify.app/" target="_blank" class="btn dark_mode_accent">See Live</a>
+            <a href="https://github.com/RTSmith801/bettertrack" target="_blank"
+              class="btn dark_mode_accent last-btn">Source
+              Code</a>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+    <section id="" class="projects dark_mode_toggle">
+
+      <!-- Project: Flutter Todo App -->
+      <div class="fade-section project-container">
+        <div class="project-description">
+          <h4>Flutter Todo App</h4>
+          <p>This functional CRUD (Create, Read, Update, Delete)
+            application was developed to explore Flutter’s
+            development environment within Android Studio.
+            Leveraging Firebase, the app supports user
+            authentication via email and password. Upon signing in,
+            users can create and manage lists, update tasks, and
+            delete list items, ensuring seamless data handling within
+            the application.</p>
+          <h5>Features:</h5>
+          <ul>
+            <li>Multi-page layout: Splash, Login, Sign Up, Home/Todo Page</li>
+            <li>Email/password authentication; each user has their own task database</li>
+          </ul>
+          <div class="btn-container">
+            <a href="https://flutterfirebasetodo-6dd0b.web.app/" target="_blank" class="btn dark_mode_accent">See
+              Live</a>
+            <a href="https://github.com/RTSmith801/flutter_firebase_todo" target="_blank"
+              class="btn dark_mode_accent last-btn">Source
+              Code</a>
+          </div>
+        </div>
+        <img src="./images/flutter_app_screenshot.JPG" data-static="./images/flutter_app_screenshot.JPG"
+          data-gif="./files/flutter_firebase_todo_demo.gif" alt="Flutter App Demo"
+          class="toggle-gif project_demo fade-section dark_mode_accent" />
+      </div>
+
+
+      <!-- Disabling. I don't want to showcase more than a couple  -->
+      <!-- <div class="fade-section text-center mt-5">
+        <a href="./projects.html" class="btn dark_mode_accent">See More Projects</a>
+      </div> -->
+
+    </section>
+
+    <!-- ===========================
+         ABOUT SECTION
+         =========================== -->
+    <section id="about" class="dark_mode_accent">
+      <h3 class="fade-section">About</h3>
+      <span class="fade-section d-flex flex-column flex-lg-row align-items-center gap-5">
+        <img src="./images/profile-pic.jpg" alt="Rick's Profile Picture" id="profile-pic" />
+        <div class="always-stack">
+          <p>I am actively seeking new opportunities in the realms of
+            software development and large-scale web projects. I thrive
+            on challenges that inspire innovation and bring out the best in
+            my skills.</p>
+
+
+          <p>When I'm not behind a keyboard, you'll likely find me
+            snowboarding down mountains, hiking new heights, or training
+            in jiu-jitsu — always chasing the next challenge.</p>
+
+          <a href="https://drive.google.com/file/d/1vqVfGto_qbv9OZ-Q_geAvoFOlkkI3bne/view?usp=sharing" target="_blank"
+            class="btn dark_mode_accent">Resume</a>
+        </div>
+      </span>
+    </section>
+
+    <!-- ===========================
+         CONTACT SECTION
+         =========================== -->
+    <section id="contact" class="dark_mode_toggle">
+      <h3 class="fade-section">Contact</h3>
+      <form method="POST" action="" id="contactForm" class="fade-section">
+        <input type="text" id="name" class="dark_mode_input" name="name" placeholder="Name" required />
+        <input type="email" id="email" class="dark_mode_input" name="email" placeholder="Email" required />
+        <textarea id="message" class="dark_mode_input" name="message" placeholder="Message" required></textarea>
+        <!-- <div class="g-recaptcha" data-sitekey="6LdtT6oqAAAAADvVz8DBrgwaxRVQvll9tCTr9Dnk" data-theme="dark"
+          data-size="normal"></div> -->
+        <div id="form-response" class="text-center mt-2 text-danger"></div>
+        <button type="submit" class="submit-btn btn dark_mode_accent">Send</button>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- ===========================
+       FOOTER
+       =========================== -->
+  <footer class="d-flex flex-column align-items-center justify-content-center gap-3 py-4 bg-dark text-light">
+    <a class="nav-link" href="#hero">▵</a>
+    <nav class="d-flex gap-3">
+      <a href="https://www.linkedin.com/in/rtsmith801/" target="_blank">
+        <img src="./icons/linkedin_white.png" class="clickable" alt="LinkedIn" title="LinkedIn" />
+      </a>
+      <a href="https://github.com/RTSmith801" target="_blank">
+        <img src="./icons/github-mark-white.svg" class="clickable" alt="GitHub" title="GitHub" />
+      </a>
+      <a href="https://drive.google.com/file/d/1vqVfGto_qbv9OZ-Q_geAvoFOlkkI3bne/view?usp=sharing" target="_blank">
+        <img src="./icons/resume_icon_white.png" class="clickable" alt="Resume" title="Resume" />
+      </a>
+    </nav>
+  </footer>
+
+  <!-- ===========================
+       JAVASCRIPT
+       =========================== -->
   <script type="module" src="./javascripts/main.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 </body>
+
 </html>
