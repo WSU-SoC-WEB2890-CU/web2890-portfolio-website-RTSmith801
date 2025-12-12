@@ -247,8 +247,14 @@ footer {
 @media (max-width: 991.98px) {
   #mobileMenuToggle {
     display: inline-flex;
-    align-items: center;
+    align-items: right;
     justify-content: center;
+    .hamburgerIconMobile {
+      color: $color04;
+    }
+    .hamburgerIconMobile .dark_accent_btn {
+      color: $color07;
+    }
   }
 
   #desktopNav {
