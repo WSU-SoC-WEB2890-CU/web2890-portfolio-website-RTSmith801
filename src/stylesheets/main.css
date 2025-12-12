@@ -12205,7 +12205,7 @@ footer {
   font-size: 3rem;
   background-color: #0a66c2;
   color: #fbfbff;
-  min-height: 100vh;
+  min-height: 1200px;
   padding: 10rem 2rem 20rem 2rem;
   align-items: center;
   gap: 5rem;
@@ -12257,7 +12257,7 @@ footer {
   padding: 10rem 2rem 30rem 2rem;
   gap: 5rem;
   background-color: #fbfbff;
-  min-height: 80vh;
+  min-height: 600px;
   align-items: center;
 }
 #projects ul, .projects ul {
@@ -12302,7 +12302,7 @@ footer {
   font-size: 3rem;
   padding: 10rem 2rem 30rem 2rem;
   gap: 5rem;
-  min-height: 80vh;
+  min-height: 600px;
   align-items: center;
   background-color: #0a66c2;
   color: #fbfbff;
@@ -12395,7 +12395,7 @@ footer {
   flex-direction: column;
   gap: 5rem;
   font-size: 3rem;
-  min-height: 100vh;
+  min-height: 1000px;
   padding: 10rem 2rem 20rem 2rem;
   background-color: #0a66c2;
   color: #fbfbff;
@@ -12470,7 +12470,7 @@ footer {
   padding: 10rem 2rem;
   gap: 5rem;
   background-color: #fbfbff;
-  min-height: 60vh;
+  min-height: 800px;
   align-items: center;
 }
 #contact form {
@@ -12507,7 +12507,7 @@ footer {
   flex-direction: column;
   gap: 1rem;
   background-color: #333333;
-  min-height: 30vh;
+  min-height: 150px;
   align-items: center;
   justify-content: center;
   color: #fbfbff;
@@ -12578,7 +12578,7 @@ footer nav {
   }
   #skills {
     font-size: 2rem;
-    min-height: 100vh;
+    min-height: 1200px;
     padding: 5rem 1rem 20rem 1rem;
   }
   #skills span {
@@ -12621,7 +12621,7 @@ footer nav {
   #contact {
     font-size: 2rem;
     padding: 10rem 1rem 20rem 1rem;
-    min-height: 80vh;
+    min-height: 1200px;
   }
   #contact form {
     font-size: 1rem;
