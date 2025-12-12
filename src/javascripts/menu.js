@@ -3,11 +3,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const desktopNav = document.getElementById("desktopNav")
   const mobileToggle = document.getElementById("mobileMenuToggle")
   const mobileMenu = document.getElementById("mobileMenu")
-  const hero = document.getElementById("hero")
+  const hero = document.getElementById("cta") // Changed from hero to cta
 
   // Detect whether hero exists
   const hasHero = !!hero
-  const heroBottom = hasHero ? hero.offsetHeight * 0.9 : null
+  // const heroBottom = hasHero ? hero.offsetHeight * 0.9 : null
+  const heroBottom = hasHero ? hero.offsetHeight * 11 : null
 
   // If there's *no* hero, force header solid style once
   if (!hasHero) {

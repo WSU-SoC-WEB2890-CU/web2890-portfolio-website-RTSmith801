@@ -14,6 +14,8 @@ $color03: #fbfbff;
 $color04: #0a66c2;
 $color05: #1c1018;
 $color06: #333333;
+$color07: #E1BC29;
+$color08: #F0A202;
 
 /* Breakpoints (used consistently below) */
 $bp-large: 1260px;
@@ -73,6 +75,7 @@ nav img {
   width: 200px;
   text-align: center;
   transition: color 0.1s ease, background-color 0.2s ease;
+  margin: .5rem .5rem 0 0;
   &:last-of-type {
     border-width: 2px;
   }
@@ -472,15 +475,7 @@ footer {
         margin-top: 1rem;
         display: flex;
         font-size: 1.5rem;
-
-        .btn {
-          border-style: solid;
-          border-width: 2px 0px 2px 2px;
-        }
-
-        .last-btn {
-          border-width: 2px;
-        }
+    
       }
     }
   }
@@ -537,23 +532,20 @@ footer {
         justify-content: flex-end;
         font-size: 1.5rem;
 
-        .btn {
+          .btn {
             border-style: solid;
             border-color: white;
             color: white;
-            border-width: 2px 0px 2px 2px;
-        }
-
-        .last-btn {
             border-width: 2px;
-        }
+          }
+
         }
 
         .btn:hover {
             color: $color04;
             background-color: #fff;
         }
-    }
+      }
     }
 
     .project_demo {
@@ -690,6 +682,7 @@ footer {
       border-style: solid;
       border-width: 2px;
       transition: color 0.1s ease, background-color 0.2s ease;
+      
 
       &:hover {
         background-color: $color04;
@@ -875,9 +868,7 @@ footer {
     text-align: center;
     justify-content: center;
   }
-  .btn {
-    border-width: 2px 2px 0px 2px;
-  }
+  
   #skills {
     font-size: 1.5rem;
     span {
@@ -891,13 +882,7 @@ footer {
         .btn-container {
           flex-direction: column;
           text-align: center;
-          .btn {
-            border-style: solid;
-            border-width: 2px 2px 0px 2px;
-          }
-          .last-btn {
-            border-width: 2px;
-          }
+          
         }
       }
     }

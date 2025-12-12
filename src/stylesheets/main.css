@@ -11916,6 +11916,7 @@ nav img {
   width: 200px;
   text-align: center;
   transition: color 0.1s ease, background-color 0.2s ease;
+  margin: 0.5rem 0.5rem 0 0;
 }
 .btn:last-of-type {
   border-width: 2px;
@@ -12284,13 +12285,6 @@ footer {
   display: flex;
   font-size: 1.5rem;
 }
-#projects .project-container .project-description .btn-container .btn, .projects .project-container .project-description .btn-container .btn {
-  border-style: solid;
-  border-width: 2px 0px 2px 2px;
-}
-#projects .project-container .project-description .btn-container .last-btn, .projects .project-container .project-description .btn-container .last-btn {
-  border-width: 2px;
-}
 #projects .project_demo, .projects .project_demo {
   max-width: 100%;
   box-shadow: 0px 0px 10px 5px #0a66c2;
@@ -12343,9 +12337,6 @@ footer {
   border-style: solid;
   border-color: white;
   color: white;
-  border-width: 2px 0px 2px 2px;
-}
-.alt-project .project-container .project-description .btn-container .last-btn {
   border-width: 2px;
 }
 .alt-project .project-container .project-description .btn:hover {
@@ -12629,9 +12620,6 @@ footer nav {
     text-align: center;
     justify-content: center;
   }
-  .btn {
-    border-width: 2px 2px 0px 2px;
-  }
   #skills {
     font-size: 1.5rem;
   }
@@ -12644,13 +12632,6 @@ footer nav {
   #projects .project-container .project-description .btn-container {
     flex-direction: column;
     text-align: center;
-  }
-  #projects .project-container .project-description .btn-container .btn {
-    border-style: solid;
-    border-width: 2px 2px 0px 2px;
-  }
-  #projects .project-container .project-description .btn-container .last-btn {
-    border-width: 2px;
   }
   #about {
     font-size: 1.5rem;
