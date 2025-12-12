@@ -654,6 +654,9 @@ footer {
   object-fit: cover;
   object-position: center 20%;
   shape-outside: circle();
+  border-color: $color05;
+  border-style: solid;
+  border-width: 2px;
 }
 
 /* ==========================================================================
