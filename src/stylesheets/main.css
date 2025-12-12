@@ -12334,14 +12334,34 @@ footer {
   font-size: 1.5rem;
 }
 .alt-project .project-container .project-description .btn-container .btn {
+  border-color: #fbfbff;
   border-style: solid;
-  border-color: white;
-  color: white;
   border-width: 2px;
+  color: #fbfbff;
+  background-color: #0a66c2;
+  width: 200px;
+  text-align: center;
+  transition: color 0.1s ease, background-color 0.2s ease;
+  margin-top: 1rem;
 }
-.alt-project .project-container .project-description .btn:hover {
+.alt-project .project-container .project-description .btn-container .btn:hover {
+  background-color: #fbfbff;
   color: #0a66c2;
-  background-color: #fff;
+}
+.alt-project .project-container .project-description .btn-container .dark_accent_btn {
+  border-color: #1c1018;
+  border-style: solid;
+  border-width: 2px;
+  color: #1c1018;
+  background-color: #E1BC29;
+  width: 200px;
+  text-align: center;
+  transition: color 0.1s ease, background-color 0.2s ease;
+  margin-top: 1rem;
+}
+.alt-project .project-container .project-description .btn-container .dark_accent_btn:hover {
+  background-color: #1c1018;
+  color: #E1BC29;
 }
 .alt-project .project_demo {
   max-width: 100%;

@@ -532,18 +532,41 @@ footer {
         justify-content: flex-end;
         font-size: 1.5rem;
 
-          .btn {
+         .btn {
+            border-color: $color03;
             border-style: solid;
-            border-color: white;
-            color: white;
             border-width: 2px;
+            color: $color03;
+            background-color: $color04;
+            width: 200px;
+            text-align: center;
+            transition: color 0.1s ease, background-color 0.2s ease;
+            margin-top: 1rem;
+
+            &:hover {
+              background-color: $color03;
+              color: $color04;
+            }
           }
+          
+          .dark_accent_btn {
+            border-color: $color05;
+            border-style: solid;
+            border-width: 2px;
+            color: $color05;
+            background-color: $color07;
+            width: 200px;
+            text-align: center;
+            transition: color 0.1s ease, background-color 0.2s ease;
+            margin-top: 1rem;
 
-        }
+            &:hover {
+              background-color: $color05;
+              color: $color07;
+            }
 
-        .btn:hover {
-            color: $color04;
-            background-color: #fff;
+          }
+        
         }
       }
     }
@@ -553,6 +576,7 @@ footer {
     box-shadow: 0px 0px 10px 5px $color05;
     }
 
+  
     
 }
 
