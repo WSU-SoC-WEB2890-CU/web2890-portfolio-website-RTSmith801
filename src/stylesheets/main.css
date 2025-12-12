@@ -12378,18 +12378,34 @@ footer {
   clip-path: polygon(0 0, 100% 0, 100% 75%, 0% 100%);
 }
 #about .btn {
-  border-color: #E1BC29;
+  border-color: #fbfbff;
   border-style: solid;
   border-width: 2px;
-  color: #E1BC29;
+  color: #fbfbff;
+  background-color: #0a66c2;
   width: 200px;
   text-align: center;
   transition: color 0.1s ease, background-color 0.2s ease;
   margin-top: 1rem;
 }
 #about .btn:hover {
+  background-color: #fbfbff;
+  color: #0a66c2;
+}
+#about .dark_accent_btn {
+  border-color: #1c1018;
+  border-style: solid;
+  border-width: 2px;
+  color: #1c1018;
   background-color: #E1BC29;
-  color: #fbfbff;
+  width: 200px;
+  text-align: center;
+  transition: color 0.1s ease, background-color 0.2s ease;
+  margin-top: 1rem;
+}
+#about .dark_accent_btn:hover {
+  background-color: #1c1018;
+  color: #E1BC29;
 }
 #about span {
   display: grid;
@@ -12451,18 +12467,8 @@ footer {
 }
 #contact form button {
   font-size: 1.5rem;
-  color: #0a66c2;
-  border-color: #0a66c2;
   margin: auto;
   width: 200px;
-  border-style: solid;
-  border-width: 2px;
-  transition: color 0.1s ease, background-color 0.2s ease;
-}
-#contact form button:hover {
-  background-color: #0a66c2;
-  color: #fbfbff;
-  cursor: pointer;
 }
 
 /* ==========================================================================
@@ -12642,6 +12648,30 @@ footer nav {
   #contact {
     font-size: 1.5rem;
   }
+}
+.dark_resume_btn {
+  background-color: #000;
+  color: #E1BC29;
+  border-color: #000;
+  transition: all 0.3s ease;
+}
+
+.dark_resume_btn:hover {
+  background-color: #E1BC29;
+  color: #000;
+  border-color: #000;
+}
+
+.dark_accent_btn {
+  background-color: transparent;
+  color: #E1BC29;
+  border-color: #E1BC29;
+  transition: all 0.3s ease;
+}
+
+.dark_accent_btn:hover {
+  background-color: #E1BC29;
+  color: #000;
 }
 
 /*# sourceMappingURL=main.css.map */
