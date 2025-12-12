@@ -12336,7 +12336,6 @@ footer {
 .alt-project .project-container .project-description .btn-container {
   margin-top: 1rem;
   display: flex;
-  justify-content: flex-end;
   font-size: 1.5rem;
 }
 .alt-project .project-container .project-description .btn-container .btn {
@@ -12592,23 +12591,23 @@ footer nav {
   #tech-stack div {
     font-size: 1rem;
   }
-  #projects {
+  #projects, .projects {
     font-size: 2rem;
   }
-  #projects p {
+  #projects p, .projects p {
     font-size: 1rem;
   }
-  #projects .project-container {
+  #projects .project-container, .projects .project-container {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  #projects .btn-container {
+  #projects .btn-container, .projects .btn-container {
     align-items: center;
     width: 100%;
     text-align: center;
     justify-content: center;
   }
-  #projects .btn {
+  #projects .btn, .projects .btn {
     font-size: 1rem;
   }
   #about {
