@@ -1,11 +1,24 @@
-import sunIcon from "../icons/sun_icon.png"
-import moonIcon from "../icons/moon_icon.png"
+import sunIconBlue from "../icons/sun_icon_blue.png"
+import moonIconBlue from "../icons/moon_icon_blue.png"
+import sunIconGold from "../icons/sun_icon_gold.png"
+import moonIconGold from "../icons/moon_icon_gold.png"
+import linkedinIconBlue from "../icons/linkedin_icon_blue.png"
+import linkedinIconGold from "../icons/linkedin_icon_gold.png"
+import githubIconBlue from "../icons/github-mark-blue.svg"
+import githubIconGold from "../icons/github-mark-gold.svg"
+import resumeIconBlue from "../icons/resume_icon_blue.png"
+import resumeIconGold from "../icons/resume_icon_gold.png"
 
 document.addEventListener("DOMContentLoaded", function () {
   const toggleButtons = [
     document.getElementById("toggleColorButton"),
     document.getElementById("toggleColorButtonMobile"),
   ]
+
+  const linkedin_buttons = [document.getElementById("linkedinIcon"), document.getElementById("linkedinIconMobile")]
+
+  const github_buttons = [document.getElementById("githubIcon"), document.getElementById("githubIconMobile")]
+  const resume_buttons = [document.getElementById("resumeIcon"), document.getElementById("resumeIconMobile")]
 
   let darkMode = false
   const gold = "#E1BC29"
@@ -114,7 +127,17 @@ document.addEventListener("DOMContentLoaded", function () {
     // Toggle icons
     // -------------------------------
     toggleButtons.forEach((btn) => {
-      if (btn) btn.src = darkMode ? moonIcon : sunIcon
+      if (btn) btn.src = darkMode ? sunIconGold : moonIconBlue
+    })
+
+    linkedin_buttons.forEach((btn) => {
+      if (btn) btn.src = darkMode ? linkedinIconGold : linkedinIconBlue
+    })
+    github_buttons.forEach((btn) => {
+      if (btn) btn.src = darkMode ? githubIconGold : githubIconBlue
+    })
+    resume_buttons.forEach((btn) => {
+      if (btn) btn.src = darkMode ? resumeIconGold : resumeIconBlue
     })
   }
 
